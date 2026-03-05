@@ -1,4 +1,16 @@
 exports.handler = async (event) => {
+  if (event.httpMethod === "GET") {
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        ok: true,
+        function: "gemini-proxy",
+        hasGeminiKey: Boolean(process.env.GEMINI_API_KEY),
+      }),
+    };
+  }
+
   if (event.httpMethod !== "POST") {
     return {
       statusCode: 405,

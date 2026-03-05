@@ -1,5 +1,5 @@
 let currentLanguage = "en";
-const GEMINI_PROXY_ENDPOINT = "/api/gemini";
+const GEMINI_PROXY_ENDPOINTS = ["/api/gemini", "/.netlify/functions/gemini-proxy"];
 
 function decodeMojibake(text) {
   if (!text) return text;
@@ -57,15 +57,22 @@ const HINDI_PLACEHOLDERS = {
 
 async function callGeminiAPI(prompt) {
   try {
-    const response = await fetch(GEMINI_PROXY_ENDPOINT, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt }),
-    });
+    let lastError = "Unknown error";
 
-    if (!response.ok) {
+    for (const endpoint of GEMINI_PROXY_ENDPOINTS) {
+      const response = await fetch(endpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        return data.text;
+      }
+
       let details = "";
       try {
         const errorBody = await response.json();
@@ -73,10 +80,11 @@ async function callGeminiAPI(prompt) {
       } catch {
         details = await response.text();
       }
-      throw new Error(`API request failed (${response.status}): ${details}`);
+
+      lastError = `API request failed (${response.status}) via ${endpoint}: ${details}`;
     }
-    const data = await response.json();
-    return data.text;
+
+    throw new Error(lastError);
   } catch (error) {
     console.error("Error calling Gemini API:", error);
     return currentLanguage === "en"
