@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furst Response | Expert Dog Care Advice</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary: #e63946;
+        --primary-dark: #e63946;
+        --secondary: #1d3557;
+        --accent: #ffd26f;
+        --light: #f5ebe0;
+        --dark: #343a40;
+        --success: #28a745;
+        --warning: #ffc107;
+        --danger: #dc3545;
+        --gray: #6c757d;
+        --light-gray: #a8dadc;
+        --transition: all 0.3s ease;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--light);
+        overflow-x: hidden;
+        font-weight: 800;
+      }
+
+      /* Header Styles (Matching Furst Response) */
+      header {
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 15px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        background-color: var(--primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 20px;
+      }
+
+      .logo-text {
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--primary);
+      }
+
+      .logo-text span {
+        color: var(--secondary);
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--dark);
+        font-weight: 800;
+        transition: var(--transition);
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var(--primary);
+        transition: var(--transition);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .translate-btn {
+        background: #fff;
+        border: 1px solid var(--light-gray);
+        padding: 8px 14px;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        transition: var(--transition);
+      }
+
+      .translate-btn:hover {
+        background-color: #e3f0f1;
+      }
+
+      /* Expert Advice Section */
+      .advice-section {
+        padding: 80px 0;
+        background-color: var(--light);
+      }
+
+      .advice-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 15px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background-color: var(--secondary);
+      }
+
+      .advice-card {
+        background-color: white;
+        border-radius: 12px;
+        padding: 40px;
+        box-shadow: 2px 2px 5px black;
+        margin: 40px 0;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .advice-text {
+        font-family: "Dancing Script", cursive;
+        font-size: 2rem;
+        color: var(--dark);
+        margin: 20px 0;
+        line-height: 1.4;
+        text-align: center;
+      }
+
+      .advice-controls {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .btn:hover {
+        background-color: var(--primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary);
+      }
+
+      .btn-secondary:hover {
+        background-color: #e06a45;
+      }
+
+      .category-selector {
+        margin: 40px 0;
+      }
+
+      .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-outline:hover,
+      .btn-outline.active {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      .saved-advice {
+        margin-top: 50px;
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        box-shadow: 2px 2px 5px black;
+      }
+
+      .saved-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .saved-item p {
+        margin: 0;
+        flex-grow: 1;
+        text-align: left;
+        padding-right: 20px;
+        font-family: "Dancing Script", cursive;
+        font-size: 1.3rem;
+      }
+
+      .delete-btn {
+        background: none;
+        border: none;
+        color: var(--secondary);
+        cursor: pointer;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .delete-btn:hover {
+        transform: scale(1.1);
+      }
+
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
+      }
+
+      .modal-overlay.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        max-width: 400px;
+        width: 90%;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .modal h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: var(--primary);
+      }
+
+      .lang-options {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .lang-option {
+        padding: 15px;
+        background-color: var(--light);
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .lang-option:hover {
+        background-color: var(--light-gray);
+      }
+
+      .lang-option span {
+        font-size: 24px;
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        .nav-links {
+          gap: 15px;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+
+        .advice-text {
+          font-size: 1.6rem;
+        }
+
+        .advice-controls {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <img src="Logo.png" width="175px" alt="Logo-img" />
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="index.html#diagnosis">Quick Diagnosis</a></li>
+          <li><a href="index.html#tips">Health Tips</a></li>
+          <li><a href="index.html#advice">Expert Advice</a></li>
+          <li><a href="index.html#feedback">Feedback</a></li>
+        </ul>
+
+        <button class="translate-btn" id="translateBtn">
+          <i class="fas fa-language"></i>
+          <span id="translateBtnText">Translate</span>
+        </button>
+      </div>
+    </header>
+
+    <section class="advice-section" id="advice">
+      <div class="container">
+        <div class="advice-container">
+          <h2 class="section-title">Advice from our Experts</h2>
+          <p>Professional tips for your dog's physical and mental wellbeing</p>
+
+          <div class="category-selector">
+            <h3>Select a category:</h3>
+            <div class="category-buttons">
+              <button class="btn-outline active" data-category="all">
+                All Advice
+              </button>
+              <button class="btn-outline" data-category="physical">
+                Physical Health
+              </button>
+              <button class="btn-outline" data-category="mental">
+                Mental Wellbeing
+              </button>
+              <button class="btn-outline" data-category="training">
+                Training Tips
+              </button>
+              <button class="btn-outline" data-category="nutrition">
+                Nutrition
+              </button>
+            </div>
+          </div>
+
+          <div class="advice-card">
+            <div class="advice-text" id="current-advice">
+              Click "New Advice" to get expert dog care tips
+            </div>
+            <div class="advice-controls">
+              <button class="btn" id="new-advice">
+                <i class="fas fa-sync-alt"></i> New Advice
+              </button>
+              <button class="btn" id="save-favorite">
+                <i class="far fa-heart"></i> Save
+              </button>
+            </div>
+          </div>
+
+          <div class="saved-advice">
+            <h3>Your Saved Advice</h3>
+            <div class="saved-list" id="saved-list"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="modal-overlay" id="languageModal">
+      <div class="modal">
+        <h3 id="languageModalTitle">Select Language</h3>
+        <div class="lang-options">
+          <div class="lang-option" data-lang="en">
+            <span>&#127482;&#127480;</span>
+            <p>English</p>
+          </div>
+          <div class="lang-option" data-lang="hi">
+            <span>&#127470;&#127475;</span>
+            <p>Hindi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let currentLanguage = localStorage.getItem("furst-response-lang") || "en";
+      let currentCategory = "all";
+      let savedAdvice = JSON.parse(localStorage.getItem("savedDogAdvice")) || [];
+
+      const uiText = {
+        en: {
+          nav: ["Quick Diagnosis", "Health Tips", "Expert Advice", "Feedback"],
+          translate: "Translate",
+          modalTitle: "Select Language",
+          title: "Advice from our Experts",
+          subtitle: "Professional tips for your dog's physical and mental wellbeing",
+          selectCategory: "Select a category:",
+          categories: {
+            all: "All Advice",
+            physical: "Physical Health",
+            mental: "Mental Wellbeing",
+            training: "Training Tips",
+            nutrition: "Nutrition",
+          },
+          defaultAdvice: 'Click "New Advice" to get expert dog care tips',
+          newAdvice: "New Advice",
+          save: "Save",
+          saved: "Saved!",
+          savedHeader: "Your Saved Advice",
+        },
+        hi: {
+          nav: ["त्वरित निदान", "स्वास्थ्य सुझाव", "विशेषज्ञ सलाह", "प्रतिक्रिया"],
+          translate: "अनुवाद करें",
+          modalTitle: "भाषा चुनें",
+          title: "हमारे विशेषज्ञों की सलाह",
+          subtitle: "आपके कुत्ते के शारीरिक और मानसिक स्वास्थ्य के लिए पेशेवर सुझाव",
+          selectCategory: "एक श्रेणी चुनें:",
+          categories: {
+            all: "सभी सलाह",
+            physical: "शारीरिक स्वास्थ्य",
+            mental: "मानसिक स्वास्थ्य",
+            training: "प्रशिक्षण सुझाव",
+            nutrition: "पोषण",
+          },
+          defaultAdvice: 'विशेषज्ञ सलाह पाने के लिए "नई सलाह" पर क्लिक करें',
+          newAdvice: "नई सलाह",
+          save: "सहेजें",
+          saved: "सहेजा गया!",
+          savedHeader: "आपकी सहेजी गई सलाह",
+        },
+      };
+
+      const expertAdvice = {
+        en: {
+          all: [
+            "Regular exercise is crucial for your dog's physical and mental health - aim for at least 30 minutes daily",
+            "Mental stimulation through puzzle toys can prevent boredom and destructive behaviors",
+            "Consistent training using positive reinforcement builds trust and good behavior",
+            "Quality sleep is as important for dogs as it is for humans - ensure a comfortable sleeping area",
+            "Regular veterinary check-ups can catch potential health issues early",
+          ],
+          physical: [
+            "Brush your dog's teeth regularly to prevent dental disease",
+            "Keep nails trimmed to avoid discomfort and mobility issues",
+            "Regular grooming prevents matting and helps spot skin problems early",
+            "Monitor your dog's weight - obesity leads to many health problems",
+            "Provide fresh water at all times to maintain proper hydration",
+          ],
+          mental: [
+            "Rotate toys weekly to keep your dog mentally engaged",
+            "Teach new tricks to stimulate your dog's brain",
+            "Provide safe chewing outlets to relieve stress and anxiety",
+            "Maintain consistent routines to reduce canine anxiety",
+            "Socialization with other dogs should be ongoing throughout their life",
+          ],
+          training: [
+            "Use treats and praise immediately to reinforce good behavior",
+            "Keep training sessions short (5-15 minutes) for best results",
+            "Never punish after the fact - dogs live in the moment",
+            "Teach 'leave it' and 'drop it' for safety and control",
+            "Practice commands in different locations for better generalization",
+          ],
+          nutrition: [
+            "Choose high-quality protein as the first ingredient in dog food",
+            "Avoid foods toxic to dogs: chocolate, grapes, onions, and xylitol",
+            "Measure meals to prevent overfeeding",
+            "Introduce new foods gradually to avoid digestive upset",
+            "Consult your vet before making significant diet changes",
+          ],
+        },
+        hi: {
+          all: [
+            "आपके कुत्ते के शारीरिक और मानसिक स्वास्थ्य के लिए नियमित व्यायाम जरूरी है - रोज कम से कम 30 मिनट रखें।",
+            "पज़ल खिलौनों से मानसिक सक्रियता बढ़ती है और बोरियत व तोड़-फोड़ वाला व्यवहार कम होता है।",
+            "सकारात्मक प्रोत्साहन के साथ लगातार प्रशिक्षण भरोसा और अच्छा व्यवहार बनाता है।",
+            "अच्छी नींद कुत्तों के लिए भी उतनी ही जरूरी है - आरामदायक सोने की जगह दें।",
+            "नियमित पशु चिकित्सक जांच से स्वास्थ्य समस्याएं शुरुआती चरण में पकड़ी जा सकती हैं।",
+          ],
+          physical: [
+            "दांतों की बीमारी से बचाव के लिए अपने कुत्ते के दांत नियमित रूप से साफ करें।",
+            "नाखून समय पर काटें ताकि चलने में दर्द या असुविधा न हो।",
+            "नियमित ग्रूमिंग से उलझन कम होती है और त्वचा की समस्याएं जल्दी दिख जाती हैं।",
+            "वज़न पर नज़र रखें - मोटापा कई गंभीर समस्याओं का कारण बनता है।",
+            "साफ़ पानी हमेशा उपलब्ध रखें ताकि शरीर में पानी की कमी न हो।",
+          ],
+          mental: [
+            "कुत्ते को मानसिक रूप से सक्रिय रखने के लिए खिलौने हर हफ्ते बदलें।",
+            "मस्तिष्क को सक्रिय रखने के लिए नए ट्रिक्स सिखाएं।",
+            "तनाव कम करने के लिए सुरक्षित चबाने वाले विकल्प दें।",
+            "चिंता कम करने के लिए रोज़ की दिनचर्या स्थिर रखें।",
+            "दूसरे कुत्तों से सामाजिक मेलजोल जीवनभर जारी रखें।",
+          ],
+          training: [
+            "अच्छे व्यवहार पर तुरंत ट्रीट और प्रशंसा दें ताकि सीख मजबूत हो।",
+            "ट्रेनिंग सत्र छोटे रखें (5-15 मिनट) ताकि परिणाम बेहतर मिलें।",
+            "घटना के बाद दंड न दें - कुत्ते वर्तमान में सीखते हैं।",
+            "सुरक्षा के लिए 'लीव इट' और 'ड्रॉप इट' कमांड सिखाएं।",
+            "बेहतर सीख के लिए अलग-अलग जगहों पर कमांड का अभ्यास करें।",
+          ],
+          nutrition: [
+            "डॉग फूड में पहली सामग्री उच्च गुणवत्ता वाला प्रोटीन चुनें।",
+            "कुत्तों के लिए विषैले खाद्य पदार्थों से बचें: चॉकलेट, अंगूर, प्याज और ज़ाइलिटोल।",
+            "अधिक खिलाने से बचने के लिए भोजन की मात्रा मापकर दें।",
+            "नए भोजन धीरे-धीरे शुरू करें ताकि पाचन खराब न हो।",
+            "बड़े आहार परिवर्तन से पहले अपने पशु चिकित्सक से सलाह लें।",
+          ],
+        },
+      };
+
+      const currentAdvice = document.getElementById("current-advice");
+      const newAdviceBtn = document.getElementById("new-advice");
+      const saveFavoriteBtn = document.getElementById("save-favorite");
+      const savedList = document.getElementById("saved-list");
+      const categoryButtons = document.querySelectorAll(".category-buttons button");
+      const translateBtn = document.getElementById("translateBtn");
+      const languageModal = document.getElementById("languageModal");
+      const langOptions = document.querySelectorAll(".lang-option");
+
+      function applyLanguage(lang) {
+        currentLanguage = lang;
+        localStorage.setItem("furst-response-lang", lang);
+        document.documentElement.lang = lang === "hi" ? "hi" : "en";
+
+        const t = uiText[lang];
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navLinks.forEach((link, idx) => {
+          if (t.nav[idx]) link.textContent = t.nav[idx];
+        });
+
+        document.getElementById("translateBtnText").textContent = t.translate;
+        document.getElementById("languageModalTitle").textContent = t.modalTitle;
+        document.querySelector(".advice-container .section-title").textContent = t.title;
+        document.querySelector(".advice-container .section-title + p").textContent = t.subtitle;
+        document.querySelector(".category-selector h3").textContent = t.selectCategory;
+        document.querySelector('[data-category="all"]').textContent = t.categories.all;
+        document.querySelector('[data-category="physical"]').textContent = t.categories.physical;
+        document.querySelector('[data-category="mental"]').textContent = t.categories.mental;
+        document.querySelector('[data-category="training"]').textContent = t.categories.training;
+        document.querySelector('[data-category="nutrition"]').textContent = t.categories.nutrition;
+        document.querySelector(".saved-advice h3").textContent = t.savedHeader;
+        newAdviceBtn.innerHTML = `<i class="fas fa-sync-alt"></i> ${t.newAdvice}`;
+        saveFavoriteBtn.innerHTML = `<i class="far fa-heart"></i> ${t.save}`;
+
+        const isDefault =
+          currentAdvice.textContent === uiText.en.defaultAdvice ||
+          currentAdvice.textContent === uiText.hi.defaultAdvice;
+        if (isDefault) {
+          currentAdvice.textContent = t.defaultAdvice;
+        }
+      }
+
+      function getRandomAdvice() {
+        const categoryAdvice = expertAdvice[currentLanguage][currentCategory];
+        const randomIndex = Math.floor(Math.random() * categoryAdvice.length);
+        currentAdvice.textContent = categoryAdvice[randomIndex];
+      }
+
+      function saveCurrentAdvice() {
+        const advice = currentAdvice.textContent;
+        const defaults = [uiText.en.defaultAdvice, uiText.hi.defaultAdvice];
+        if (advice && !defaults.includes(advice) && !savedAdvice.includes(advice)) {
+          savedAdvice.push(advice);
+          localStorage.setItem("savedDogAdvice", JSON.stringify(savedAdvice));
+          renderSavedAdvice();
+
+          saveFavoriteBtn.innerHTML = `<i class="fas fa-heart"></i> ${uiText[currentLanguage].saved}`;
+          setTimeout(() => {
+            saveFavoriteBtn.innerHTML = `<i class="far fa-heart"></i> ${uiText[currentLanguage].save}`;
+          }, 2000);
+        }
+      }
+
+      function renderSavedAdvice() {
+        savedList.innerHTML = savedAdvice
+          .map(
+            (advice) => `
+                <div class="saved-item">
+                    <p>${advice}</p>
+                    <button class="delete-btn" data-advice="${advice}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </div>
+            `
+          )
+          .join("");
+
+        document.querySelectorAll(".delete-btn").forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const adviceToRemove = this.dataset.advice;
+            savedAdvice = savedAdvice.filter((a) => a !== adviceToRemove);
+            localStorage.setItem("savedDogAdvice", JSON.stringify(savedAdvice));
+            renderSavedAdvice();
+          });
+        });
+      }
+
+      newAdviceBtn.addEventListener("click", getRandomAdvice);
+      saveFavoriteBtn.addEventListener("click", saveCurrentAdvice);
+      categoryButtons.forEach((button) => {
+        button.addEventListener("click", function () {
+          categoryButtons.forEach((btn) => btn.classList.remove("active"));
+          this.classList.add("active");
+          currentCategory = this.dataset.category;
+          getRandomAdvice();
+        });
+      });
+
+      translateBtn.addEventListener("click", () => languageModal.classList.add("active"));
+      langOptions.forEach((option) => {
+        option.addEventListener("click", () => {
+          applyLanguage(option.getAttribute("data-lang"));
+          languageModal.classList.remove("active");
+        });
+      });
+      languageModal.addEventListener("click", (e) => {
+        if (e.target === languageModal) languageModal.classList.remove("active");
+      });
+
+      applyLanguage(currentLanguage === "hi" ? "hi" : "en");
+      currentAdvice.textContent = uiText[currentLanguage].defaultAdvice;
+      renderSavedAdvice();
+    </script>
+  </body>
+</html>

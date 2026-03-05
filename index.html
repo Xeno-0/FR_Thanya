@@ -1,0 +1,407 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Furst Response - Dog Healthcare</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container header-container">
+        <a href="#" class="logo">
+          <img src="Logo.png" width="175px" alt="Logo-img" />
+        </a>
+
+        <ul class="nav-links">
+          <li>
+            <a
+              href="#diagnosis"
+              class="nav-link"
+              data-en="Quick Diagnosis"
+              data-hi="त्वरित निदान"
+              >Quick Diagnosis</a
+            >
+          </li>
+          <li>
+            <a
+              href="expert.html"
+              class="nav-link"
+              data-en="Expert Advice"
+              data-hi="विश�?ष�o्�z सलाह"
+              >Expert Advice</a
+            >
+          </li>
+          <li>
+            <a
+              href="#tips"
+              class="nav-link"
+              data-en="Health Tips"
+              data-hi="स्वास्थ्य सुझाव"
+              >Health Tips</a
+            >
+          </li>
+          <li>
+            <a
+              href="#feedback"
+              class="nav-link"
+              data-en="Feedback"
+              data-hi="प्रति�.्रिया"
+              >Feedback</a
+            >
+          </li>
+        </ul>
+
+        <button class="translate-btn" id="translateBtn">
+          <i class="fas fa-language"></i>
+          <span class="translate-text" data-en="Translate" data-hi="�.नुवाद �.र�?�,"
+            >Translate</span
+          >
+        </button>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h1
+          class="hero-title"
+          data-en="The Paw-fect advice, instantly."
+          data-hi="ए�.दम सह�? राय, तुर�,त"
+        >
+          The Paw-fect advice, instantly.
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-en="Furst Response provides immediate healthcare guidance for your furry friends. Get quick diagnoses, expert health tips, and peace of mind."
+          data-hi="फर्स्�Y रिस्प�?न्स �?प�.�? पालत�, �oानवर�<�, �.�? लिए तत्�.ाल स्वास्थ्य द�?�-भाल मार्�-दर्शन प्रदान �.रता ह�^। त्वरित निदान, विश�?ष�o्�z स्वास्थ्य सुझाव �"र मन �.�? शा�,ति प्राप्त �.र�?�,।"
+        >
+          Furst Response provides immediate healthcare guidance for your furry
+          friends. Get quick diagnoses, expert health tips, and peace of mind.
+        </p>
+        <a
+          href="#diagnosis"
+          class="btn btn-secondary"
+          data-en="Check Symptoms Now"
+          data-hi="�.भ�? ल�.्षण �oा�,�s�?�,"
+          >Check Symptoms Now</a
+        >
+      </div>
+    </section>
+
+    <section id="diagnosis" class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2
+            class="section-heading"
+            data-en="Quick Symptom Diagnosis"
+            data-hi="त्वरित ल�.्षण निदान"
+          >
+            Quick Symptom Diagnosis
+          </h2>
+          <p
+            class="section-desc"
+            data-en="Describe your dog's symptoms and get immediate insights on possible conditions and recommended actions"
+            data-hi="�.पन�? �.ुत्त�? �.�? ल�.्षण�<�, �.ा वर्णन �.र�?�, �"र स�,भावित स्थितिय�<�, �"र �.नुश�,सित �.ार्रवा�?य�<�, पर तत्�.ाल �oान�.ार�? प्राप्त �.र�?�,"
+          >
+            Describe your dog's symptoms and get immediate insights on possible
+            conditions and recommended actions
+          </p>
+        </div>
+
+        <div class="chatbot-container">
+          <div class="chat-header">
+            <h3>
+              <i class="fas fa-dog"></i>
+              <span
+                data-en="Canine Health Assistant"
+                data-hi="�.�^ना�?न स्वास्थ्य सहाय�."
+                >Canine Health Assistant</span
+              >
+            </h3>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+              <span
+                class="bot-greeting"
+                data-en="Hello! I'm the Furst Response Health Assistant. How can I help your dog today? Please describe any symptoms you've noticed."
+                data-hi="नमस्त�?! म�^�, फर्स्�Y रिस्प�?न्स ह�?ल्थ �.सिस्�Y�?�,�Y ह�,ँ। म�^�, �?प�.�? �.ुत्त�? �.�? �?�o �.�^स�? मदद �.र स�.ता ह�,ँ? �.�fपया �?पन�? �o�< �.�<�^ भ�? ल�.्षण द�?�-ा ह�^ �?स�.ा वर्णन �.र�?�,।"
+                >Hello! I'm the Furst Response Health Assistant. How can I help
+                your dog today? Please describe any symptoms you've
+                noticed.</span
+              >
+            </div>
+          </div>
+
+          <div class="chat-input">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Describe your dog's symptoms..."
+              data-en-placeholder="Describe your dog's symptoms..."
+              data-hi-placeholder="�.पन�? �.ुत्त�? �.�? ल�.्षण�<�, �.ा वर्णन �.र�?�,..."
+            />
+            <button id="sendBtn"><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expert">
+      <div class="container expert-content">
+        <h1
+          class="hero-title"
+          data-en="Trust no one, but the best"
+          data-hi="भर�<सा �.िस�? पर नह�?�,, बल्�.ि सर्वश्र�?ष्ठ पर �.र�?�,"
+        >
+          Trust no one, but the best
+        </h1>
+        <p
+          class="hero-subtitle"
+          data-en="Get Vet-Approved advice for your dog's health, on the click of a button."
+          data-hi="ए�. ब�Yन �.�? �.्लि�. पर �.पन�? �.ुत्त�? �.�? स्वास्थ्य �.�? लिए पशु�sि�.ित्स�. द्वारा �.नुम�<दित सलाह प्राप्त �.र�?�,।"
+        >
+          Get Vet-Approved advice for your dog's health, on the click of a
+          button.
+        </p>
+        <a
+          href="expert.html"
+          class="btn btn-secondary-2"
+          data-en="View Expert Advice"
+          data-hi="विश�?ष�o्�z सलाह द�?�-�?�,"
+          >View Expert Advice</a
+        >
+      </div>
+    </section>
+
+    <section id="tips" class="section health-tips">
+      <div class="container">
+        <div class="section-title">
+          <h2
+            class="section-heading"
+            data-en="Pet Health Tips"
+            data-hi="पालत�, स्वास्थ्य सुझाव"
+          >
+            Pet Health Tips
+          </h2>
+          <p
+            class="section-desc"
+            data-en="Essential advice to keep your dog healthy and happy"
+            data-hi="�.पन�? �.ुत्त�? �.�< स्वस्थ �"र �-ुश र�-न�? �.�? लिए �?वश्य�. सलाह"
+          >
+            Essential advice to keep your dog healthy and happy
+          </p>
+        </div>
+
+        <div class="tips-grid">
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-bone"></i>
+            </div>
+            <div class="tip-content">
+              <h3
+                class="tip-title"
+                data-en="Nutrition Essentials"
+                data-hi="प�<षण �?वश्य�.ताएँ"
+              >
+                Nutrition Essentials
+              </h3>
+              <p
+                class="tip-desc"
+                data-en="Feed your dog high-quality protein sources and ensure they have access to fresh water at all times. Avoid foods toxic to dogs like chocolate, grapes, and onions."
+                data-hi="�.पन�? �.ुत्त�? �.�< �?�s्�s �-ुणवत्ता वाल�? प्र�<�Y�?न स्र�<त �-िलाए�, �"र सुनिश्�sित �.र�?�, �.ि �?न्ह�?�, हर समय ता�o�? पान�? �.�? पहु�,�s ह�<। �.ुत्त�<�, �.�? लिए विषा�.्त �-ाद्य पदार्थ�<�, �o�^स�? �s�?�.ल�?�Y, �.�,�-�,र �"र प्या�o स�? ब�s�?�,।"
+              >
+                Feed your dog high-quality protein sources and ensure they have
+                access to fresh water at all times. Avoid foods toxic to dogs
+                like chocolate, grapes, and onions.
+              </p>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-walking"></i>
+            </div>
+            <div class="tip-content">
+              <h3
+                class="tip-title"
+                data-en="Exercise Requirements"
+                data-hi="व्यायाम �?वश्य�.ताएँ"
+              >
+                Exercise Requirements
+              </h3>
+              <p
+                class="tip-desc"
+                data-en="Most dogs need at least 30-60 minutes of exercise daily. Adjust based on breed, age, and health. Regular walks prevent obesity and promote cardiovascular health."
+                data-hi="�.धि�.ा�,श �.ुत्त�<�, �.�< प्रतिदिन �.म स�? �.म 30-60 मिन�Y व्यायाम �.�? �?वश्य�.ता ह�<त�? ह�^। नस्ल, �?म्र �"र स्वास्थ्य �.�? �?धार पर समाय�<�oित �.र�?�,। नियमित स�^र म�<�Yाप�? �.�< र�<�.त�? ह�^ �"र ह�fदय स्वास्थ्य �.�< बढ़ावा द�?त�? ह�^।"
+              >
+                Most dogs need at least 30-60 minutes of exercise daily. Adjust
+                based on breed, age, and health. Regular walks prevent obesity
+                and promote cardiovascular health.
+              </p>
+            </div>
+          </div>
+
+          <div class="tip-card">
+            <div class="tip-icon">
+              <i class="fas fa-syringe"></i>
+            </div>
+            <div class="tip-content">
+              <h3
+                class="tip-title"
+                data-en="Vaccination Schedule"
+                data-hi="�Y�?�.ा�.रण �.ार्य�.्रम"
+              >
+                Vaccination Schedule
+              </h3>
+              <p
+                class="tip-desc"
+                data-en="Keep vaccinations up to date. Core vaccines include rabies, distemper, parvovirus, and adenovirus. Consult your vet for a personalized schedule."
+                data-hi="�Y�?�.ा�.रण �.�< �.द्यतन र�-�?�,। मु�-्य �Y�?�.�<�, म�?�, र�?ब�?�o, डिस्�Y�?�,पर, पार्व�<वायरस �"र एड�?न�<वायरस शामिल ह�^�,। व्य�.्ति�-त �.ार्य�.्रम �.�? लिए �.पन�? पशु �sि�.ित्स�. स�? परामर्श �.र�?�,।"
+              >
+                Keep vaccinations up to date. Core vaccines include rabies,
+                distemper, parvovirus, and adenovirus. Consult your vet for a
+                personalized schedule.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="show-more">
+          <a class="btn" data-en="Show More Tips" data-hi="�.धि�. सुझाव दि�-ाए�,"
+            >Show More Tips</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section id="feedback" class="section feedback">
+      <div class="container">
+        <div class="section-title">
+          <h2
+            class="section-heading"
+            data-en="Your Feedback Matters"
+            data-hi="�?प�.�? प्रति�.्रिया मायन�? र�-त�? ह�^"
+          >
+            Your Feedback Matters
+          </h2>
+          <p
+            class="section-desc"
+            data-en="Help us improve our service by sharing your experience"
+            data-hi="�.पना �.नुभव साझा �.र�.�? हम�?�, �.पन�? स�?वा म�?�, सुधार �.रन�? म�?�, मदद �.र�?�,"
+          >
+            Help us improve our service by sharing your experience
+          </p>
+        </div>
+
+        <div class="feedback-form">
+          <form id="feedbackForm">
+            <div class="form-group">
+              <label for="name" data-en="Name" data-hi="नाम">Name</label>
+              <input type="text" id="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone" data-en="Phone Number" data-hi="फ़�<न न�,बर"
+                >Phone Number</label
+              >
+              <input type="tel" id="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label
+                data-en="Rate Your Experience"
+                data-hi="�.पन�? �.नुभव �.�< र�?�Yि�,�- द�?�,"
+                >Rate Your Experience</label
+              >
+              <div class="rating">
+                <input type="radio" id="star5" name="rating" value="5" />
+                <label for="star5">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1">&#9733;</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="comments" data-en="Comments" data-hi="�Yिप्पणियाँ"
+                >Comments</label
+              >
+              <textarea id="comments" rows="4" required></textarea>
+            </div>
+
+            <div class="form-submit">
+              <button
+                type="submit"
+                class="btn"
+                data-en="Submit Feedback"
+                data-hi="प्रति�.्रिया सबमि�Y �.र�?�,"
+              >
+                Submit Feedback
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p
+          class="footer-text"
+          data-en="Providing immediate healthcare guidance for your doggos :)"
+          data-hi="�?प�.�? �.�^ना�?न साथिय�<�, �.�? लिए तत्�.ाल स्वास्थ्य द�?�-भाल मार्�-दर्शन प्रदान �.रना :)"
+        >
+          Providing immediate healthcare guidance for your doggos :)
+        </p>
+
+        <div class="copyright">
+          &copy; 2025 Vansh Vashist.
+          <span data-en="All rights reserved." data-hi="सर्वाधि�.ार सुर�.्षित।"
+            >All rights reserved.</span
+          >
+          <span
+            data-en="Made with &#10084;&#65039; and lots of coffee."
+            data-hi="&#10084;&#65039; �"र बहुत सार�? �.�?फ�? �.�? साथ बनाया �-या।"
+            >Made with &#10084;&#65039; and lots of coffee.</span
+          >
+        </div>
+      </div>
+    </footer>
+
+    <div class="modal-overlay" id="languageModal">
+      <div class="modal">
+        <h3 class="modal-title" data-en="Select Language" data-hi="भाषा �sुन�?�,">
+          Select Language
+        </h3>
+        <div class="lang-options">
+          <div class="lang-option" data-lang="en">
+            <span>&#127482;&#127480;</span>
+            <p data-en="English" data-hi="�.�,�-्र�?़�?">English</p>
+          </div>
+          <div class="lang-option" data-lang="hi">
+            <span>&#127470;&#127475;</span>
+            <p data-en="Hindi" data-hi="हि�,द�?">Hindi</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
+
+
