@@ -65,7 +65,16 @@ async function callGeminiAPI(prompt) {
       body: JSON.stringify({ prompt }),
     });
 
-    if (!response.ok) throw new Error("API request failed");
+    if (!response.ok) {
+      let details = "";
+      try {
+        const errorBody = await response.json();
+        details = errorBody?.error || JSON.stringify(errorBody);
+      } catch {
+        details = await response.text();
+      }
+      throw new Error(`API request failed (${response.status}): ${details}`);
+    }
     const data = await response.json();
     return data.text;
   } catch (error) {

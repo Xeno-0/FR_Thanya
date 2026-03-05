@@ -26,9 +26,10 @@ exports.handler = async (event) => {
       };
     }
 
+    const model = process.env.GEMINI_MODEL || "gemini-2.0-flash";
     const apiUrl =
       `https://generativelanguage.googleapis.com/v1beta/models/` +
-      `gemini-2.0-flash:generateContent?key=${apiKey}`;
+      `${model}:generateContent?key=${apiKey}`;
 
     const requestBody = {
       contents: [
